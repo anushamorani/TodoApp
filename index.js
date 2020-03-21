@@ -9,8 +9,6 @@ var express     = require("express"),
     List      = require("./models/list"),
     User        = require("./models/user")
 const config = require('./config/database');
-const path = require("path");
-const crypto = require("crypto");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

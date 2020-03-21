@@ -29,7 +29,7 @@ router.post("/register",isNotLoggedIn, function(req, res){
                     return res.redirect("register");
                 }
                 else{
-                    req.flash("success","Welcome To ARTBEAT " + user.username);
+                    req.flash("success","Welcome To THE TODO APP " + user.username);
                     res.redirect("lists");
                 }
             });
