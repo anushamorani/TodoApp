@@ -19,8 +19,7 @@ router.get("/",isLoggedIn, function(req, res){
 router.post("/",isLoggedIn, function(req, res){
     var todo = req.body.todo;
     var user={
-        id: req.user._id,
-        username: req.user.username
+        id: req.user._id
     };
     var newTodo = {todo: todo, user:user};
     List.create(newTodo, function(err, newlyCreated){
