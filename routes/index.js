@@ -56,7 +56,7 @@ router.post("/login",isNotLoggedIn, passport.authenticate("local",
 router.get("/logout", function(req, res){
    req.logout();
    req.flash("success","You logged out!");
-   res.redirect("register");
+   res.redirect("login");
 });
 
 //middleware

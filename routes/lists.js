@@ -33,7 +33,7 @@ router.post("/",isLoggedIn, function(req, res){
     });
 });
 
-//update
+//update route
 router.put("/:id", function(req,res){
     var status = true;
   List.findById(req.params.id,function(err,foundList){
@@ -70,7 +70,7 @@ router.put("/:id", function(req,res){
 
 
 
-//delete
+//delete route
 router.delete("/:id",isLoggedIn,function(req,res){
     
     List.findByIdAndRemove(req.params.id, function(err,del)
@@ -90,7 +90,7 @@ router.delete("/:id",isLoggedIn,function(req,res){
 
 
 
-
+//middleware
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
