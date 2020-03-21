@@ -17,6 +17,12 @@ https://ignitelabs-todoapp.herokuapp.com/
 
 
 
+Just to check the functioning: you can use email "anushamorani97@gmail.com" password:"pass123" as a sample to see how app works.
+
+
+
+
+
 2.Create your account
 
 
@@ -96,3 +102,15 @@ Change Password
 
 Date wise Todo sorting  
 etc..
+
+
+
+
+SEED DB:
+
+
+
+
+uncomment the seedDB() line in index.js file to seed data into the db. Data is defined in the seeds.js file.
+
+
