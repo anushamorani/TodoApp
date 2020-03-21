@@ -33,6 +33,43 @@ router.post("/",isLoggedIn, function(req, res){
     });
 });
 
+//update
+router.put("/:id", function(req,res){
+    var status = true;
+  List.findById(req.params.id,function(err,foundList){
+        if(err){
+            req.flash("error","Something Went Wrong!");
+            res.redirect("/lists");
+        }
+        if(foundList.status == false){
+            foundList.status = true;
+            foundList.save(function(err){
+                if(err){
+                    req.flash("error","Something Went Wrong!");
+                    return res.redirect("/lists");
+                }
+                res.redirect("/lists");
+            });
+            
+
+        }
+        else{
+            foundList.status = false;
+            foundList.save(function(err){
+                if(err){
+                    req.flash("error","Something Went Wrong!");
+                    return res.redirect("/lists");
+                }
+                res.redirect("/lists");
+            });
+        }
+
+    });
+
+});
+
+
+
 //delete
 router.delete("/:id",isLoggedIn,function(req,res){
     

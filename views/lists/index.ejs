@@ -7,12 +7,28 @@
 
   <ul>
     <% lists.forEach(function(list){ %>
-    <form action="/lists/<%=list._id%>?_method=DELETE" method="POST">
-                            <li class="td"><button class = "btn-large"><i class="fa fa-trash"></i></button>
-                            <%= list.todo %>
+
+                            <% if(list.status){ %>
+                            <form action="/lists/<%=list._id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
+                              <button class = "btn-small btn-primary" style="float: right;">Mark UnDone?</button>
+                              </form>
+                            <li class="td completed">
+                            <form action="/lists/<%=list._id%>?_method=DELETE" method="POST">
+                              <button class = "btn-large"><i class="fa fa-trash"></i></button>
+                              <%= list.todo %>
+                              </form>
                             </li>
-    </form>
-        
+                            <% }else{ %>
+                            <form action="/lists/<%=list._id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
+                              <button class = "btn-small btn-primary" style="float: right;">Mark As Done?</button>
+                              </form>
+                            <li class="td ">
+                            <form action="/lists/<%=list._id%>?_method=DELETE" method="POST">
+                              <button class = "btn-large"><i class="fa fa-trash"></i></button>
+                              <%= list.todo %>
+                              </form>
+                            </li>
+                            <% } %>
     <% }); %>
   </ul>
 </div>
