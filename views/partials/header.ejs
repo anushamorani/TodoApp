@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+  <link rel="stylesheet" type="text/css" href="/assests/css/todos.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+  <script type="text/javascript" src="/assests/js/lib/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+  <nav class="navbar justify-content-between" style="background-color: #25d3d9;">
+  <a class="navbar-brand">TODO APP</a>
+  <form class="form-inline">
+    <% if(!currentUser){ %>
+                        <li class="nav-item" style="list-style: none;">
+                          <a class="nav-link" style="color: black;" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item" style="list-style: none;">
+                          <a class="nav-link" style="color: black;" href="/register">SignUp</a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item" style="list-style: none;">
+                          <a class="nav-link" style="color: black;" href="#"><%= currentUser.username %></a>
+                        </li>
+                        <li class="nav-item" style="list-style: none;">
+                          <a class="nav-link" style="color: black;" href="/logout">Logout</a>
+                        </li>
+                    <% } %>
+  </form>
+</nav>
+    <div class="container" style="padding-top: 50px;">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>

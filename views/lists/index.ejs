@@ -1,0 +1,21 @@
+<%- include ('../partials/header') %> 
+<div id="container">
+  <h1>To-Do List <i class="fa fa-plus"></i></h1>
+  <form action="/lists" method="POST">  
+    <input name="todo" id="todo" type="text" placeholder="Add New Todo">
+  </form>
+
+  <ul>
+    <% lists.forEach(function(list){ %>
+    <form action="/lists/<%=list._id%>?_method=DELETE" method="POST">
+                            <li class="td"><button class = "btn-large"><i class="fa fa-trash"></i></button>
+                            <%= list.todo %>
+                            </li>
+    </form>
+        
+    <% }); %>
+  </ul>
+</div>
+
+<script type="text/javascript" src="/assests/js/todos.js"></script>
+<%- include ('../partials/footer') %> 
