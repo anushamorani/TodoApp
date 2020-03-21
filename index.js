@@ -51,6 +51,6 @@ app.use("/", indexRoutes);
 app.use("/lists", listRoutes);
 
 
-app.listen(3000, () => {
-  console.log('Server started on port ');
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The todoapp Server Has Started!");
 });
