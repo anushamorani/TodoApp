@@ -7,7 +7,8 @@ var express     = require("express"),
     methodOverride= require("method-override"),
     LocalStrategy = require("passport-local"),
     List      = require("./models/list"),
-    User        = require("./models/user")
+    User        = require("./models/user"),
+    seedDB      = require("./seeds")
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -15,6 +16,9 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
+
+
+//seedDB()
 
 //requring routes
 var listRoutes    = require("./routes/lists"),
