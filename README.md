@@ -74,3 +74,25 @@ cd TodoApp.nodejs
 
 
 npm install
+
+
+
+
+Future Work:
+
+
+
+
+
+Email verfication through Sendgrid
+
+
+
+
+Change Password
+
+
+
+
+Date wise Todo sorting  
+etc..
