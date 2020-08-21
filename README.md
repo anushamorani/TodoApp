@@ -17,12 +17,6 @@ https://ignitelabs-todoapp.herokuapp.com/
 
 
 
-Just to check the functioning: you can use email "anushamorani97@gmail.com" password:"pass123" as a sample to see how app works.
-
-
-
-
-
 2.Create your account
 
 
@@ -47,70 +41,8 @@ Just to check the functioning: you can use email "anushamorani97@gmail.com" pass
 
 
 
-6.Click on the mark button to uncheck/check the item
+6.Click on the checkbox to uncheck/check the item
 
 
-
-
-
-
-Common Setup:
-
-
-
-
-
-Clone the repo and install the dependencies.
-
-
-
-
-
-
-git clone https://github.com/anushamorani/TodoApp.git
-
-
-
-
-
-cd TodoApp.nodejs
-
-
-
-
-
-npm install
-
-
-
-
-Future Work:
-
-
-
-
-
-Email verfication through Sendgrid
-
-
-
-
-Change Password
-
-
-
-
-Date wise Todo sorting  
-etc..
-
-
-
-
-SEED DB:
-
-
-
-
-uncomment the seedDB() line in index.js file to seed data into the db. Data is defined in the seeds.js file.
 
 
